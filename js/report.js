@@ -40,104 +40,31 @@ var studentN0;
 
 var stdList = [];
 function addItemsToTable(id, date, times, weeks, month, other, pay) {
-    var tbody = document.getElementById('myCard');
-
+    var tbody = document.getElementById('showDataReport');
+    let time = document.getElementById('showTime');
     stdList.push([id, date, times, weeks, month, other, pay]);
-    let idcheck = `${date}pay`;
-    const sleep = async (milliseconds) => {
-        await new Promise(resolve => {
-            return setTimeout(resolve, milliseconds);
-        });
-        let paid = '';
-        let aa = document.getElementById(`${idcheck}`);
-        let box = document.getElementById(`${date}forpay`);
-        box.value = `${pay}`;
-
-        if (box.value == 'paid') {
-            box.style.display = 'none';
-        }
-        aa.addEventListener('click', () => {
-            if(aa.checked == true){
-                let data = 'paid';
-                firebase.database().ref("myNotePad/" + date).update(
-                    {
-                        pay: data,
-                    },
-                )
-            }
-            if(aa.checked == false){
-                let data2 = 'unpaid';
-                firebase.database().ref("myNotePad/" + date).update(
-                    {
-                        pay: data2,
-                    },
-                )
-            }
-        })
-        if (pay == 'paid') {
-            aa.checked = true;
-
-        }
-        if (pay == 'unpaid') {
-
-            aa.checked = false;
-
-        }
-
-
-    };
-    sleep(1000);
 
     let tr = `
-                        <div class="card card-tale" id="${date}forpay" >
-                            <div class="card-body" onclick="Fillbox(${studentN0})">
-                                <td style="background-color: transparent;color: white;">
-                                      <span style="color: brown;font-weight: bold;display:none "> ${++studentN0}</span>
-                                
-                                <table class="table-borderless table">
-                                    <tr>
-                                        <td style="background-color: transparent;color: white;">
-                                            ID:  <span style="color: rgb(198, 255, 9);font-weight: bold" > ${id}</span>
-                                        </td>
-                                        <td style="background-color: transparent;color: white;">
-                                            Date: ${date}
-                                        </td>
-                                        <td style="background-color: transparent;color: white;">
-                                            Times: ${times}
-                                        </td>
-                                        </tr>
-                                    <tr>
-                                        <td style="background-color: transparent;color: white;">
-                                            Month: ${month}
-                                        </td>
-                                        <td style="background-color: transparent;color: white;">
-                                            Week: ${weeks}
-                                        </td>
-                                        <td style="background-color: transparent;color: white;">
-                                            Payment: ${pay}
-                                        </td>
-                                        <td style="background-color: transparent;color: white;">
-                                            <input type="checkbox" id="${date}pay">
-                                        </td>
-
-                                    </tr>
-                                </table>
-                                <textarea disabled name="myother" id="myother" cols="55" rows="5" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                    class="form-control" id="${date}other">${other}</textarea>
-                            </div>
-                        </div>
-                        <br>
+        <th>${++studentN0}</th>
+        <th>${id}</th>
+        <th>${date}</th>
+        <th>${times}</th>
+        <th>${month}</th>
+        <th>${weeks}</th>
+        <th>${pay}</th>
+        <th>${other}</th>
+                        
             
             `
-    // if (pay == 'paid') {
-    //     tbody.innerHTML = '';
-
-    // } else {
-    tbody.innerHTML += tr;
-
-    // }
-
-
+    if (pay == 'paid') {
+        tbody.innerHTML = '';
+        
+    } else {
+        
+        tbody.innerHTML += tr;
+        let cc = tbody.rows.length.toString();
+        time.innerText = cc;
+    }
 }
 
 var Mid = document.getElementById('myid');

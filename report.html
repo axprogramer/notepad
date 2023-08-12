@@ -29,9 +29,9 @@
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="./images/icon.png" class="mr-2"
+                <a class="navbar-brand brand-logo mr-5" href="#"><img src="./images/icon.png" class="mr-2"
                         alt="logo" />NP</a>
-                <a class="navbar-brand brand-logo-mini" href="index.html"><img src="./images/icon.png"
+                <a class="navbar-brand brand-logo-mini" href="#"><img src="./images/icon.png"
                         alt="logo" />NP</a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -102,7 +102,7 @@
                             </a>
                         </div>
                     </li> -->
-                    <li class="nav-item nav-profile dropdown">
+                    <!-- <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                             <img src="https://media.licdn.com/dms/image/C5103AQFE5Z6dl81aOA/profile-displayphoto-shrink_800_800/0/1565560625541?e=2147483647&v=beta&t=EZ-679rguoUzly0b1lvIQ2gPwwAbo3SoZFASZ3h_Xdc"
                                 alt="profile" />
@@ -123,7 +123,7 @@
                         <a class="nav-link" href="#">
                             <i class="icon-ellipsis"></i>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-toggle="offcanvas">
@@ -322,10 +322,10 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="index.html">
                             <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Dashboard</span>
+                            <span class="menu-title">Report</span>
                         </a>
                     </li>
                     <!-- <li class="nav-item">
@@ -433,19 +433,12 @@
                             </ul>
                         </div>
                     </li> -->
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active" href="./preview.html">
                             <i class="icon-paper menu-icon"></i>
                             <span class="menu-title">Review</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./report.html">
-                            <i class="icon-paper menu-icon"></i>
-                            <span class="menu-title">Report</span>
-                        </a>
-                    </li>
-
+                    </li> -->
                 </ul>
             </nav>
             <!-- partial -->
@@ -589,11 +582,12 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h4 class="card-title text-center">Preview - Teaching Record (Weekend Class)</h4>
+                                <h4 class="card-title text-center" style="font-weight: bold;">Teaching Weekly Class</h4><br>
+                                <h4 class="card-title text-center">Total: <span id="showTime" style="color: red;"></span> Days</h4><br>
                                 <!-- <button type="button" class="btn btn-success btn-rounded btn-fw" id="myAdd"
                                 data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 5rem;"
                                 onclick="NewBox()">Add</button> -->
-
+                                
                             </div>
                         </div>
                     </div>
@@ -630,8 +624,8 @@
                                                 </th>
                                             </tr>
                                         </thead>
-                                        <tbody id="showData">
-
+                                        <tbody id="showDataReport">
+                                            
                                         </tbody>
                                     </table>
                                 </div>
@@ -650,8 +644,7 @@
                         </span>
                     </div>
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Created by <a
-                                target="_blank">Raksmey
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Created by <a target="_blank">Raksmey
                                 Alix</a></span>
                     </div>
 
@@ -694,7 +687,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-storage.js"></script>
-    <script src="./js/preview.js"></script>
+    <script src="./js/report.js"></script>
     <!-- End custom js for this page-->
 </body>
 
