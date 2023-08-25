@@ -96,7 +96,7 @@ function addItemsToTable(id, date, times, weeks, month, other, pay) {
                                 
                                 <table class="table-borderless table">
                                     <tr>
-                                        <td style="background-color: transparent;color: white;">
+                                        <td style="background-color: transparent;color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                             ID:  <span style="color: rgb(198, 255, 9);font-weight: bold" > ${id}</span>
                                         </td>
                                         <td style="background-color: transparent;color: white;">
@@ -122,7 +122,7 @@ function addItemsToTable(id, date, times, weeks, month, other, pay) {
 
                                     </tr>
                                 </table>
-                                <textarea disabled name="myother" id="myother" cols="55" rows="5" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                <textarea disabled name="myother" id="myother" cols="55" rows="5" 
                                     class="form-control" id="${date}other">${other}</textarea>
                             </div>
                         </div>
